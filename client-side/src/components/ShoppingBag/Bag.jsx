@@ -11,7 +11,7 @@ export const Bag = () => {
   var userid = useSelector((store) => store.user._id);
   console.log(userid);
   const getUserProduct = () => {
-    axios.get(`http://localhost:4500/cart/${userid}`).then((res) => {
+    axios.get(`https://nordstrom-backend.herokuapp.com/cart/${userid}`).then((res) => {
       console.log(res.data);
       console.log("Hello");
     });
@@ -53,7 +53,7 @@ export const Bag = () => {
                 />
               </div>
               <div className="prodDis">
-                <p>PAIGE</p>
+                <p>PAGE</p>
                 <p>Transcend - Lennox Slim Fit Jeans</p>
                 <p>Size: 29</p>
                 <p>Color: SHELDON</p>

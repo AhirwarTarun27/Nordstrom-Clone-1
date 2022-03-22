@@ -55,7 +55,7 @@ export const Checkout = () => {
       phone: formData.phone,
       country: formData.country,
     };
-    axios.post("http://localhost:4500/checkout", newData);
+    axios.post("https://nordstrom-backend.herokuapp.com/checkout", newData);
     //navigating
     console.log("newData", newData);
   };

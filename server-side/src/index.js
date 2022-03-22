@@ -3,8 +3,10 @@ const express = require("express");
 const passport = require("./configs/passport");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-
+// checking
+// checking
 const app = express();
+// app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
@@ -28,6 +30,14 @@ app.use(express.json());
 // const Address = require("./model/address.model");
 
 app.use(express.urlencoded({ extended: true }));
+
+app.get("", async (req, res) => {
+  try {
+    
+  } catch (err) {
+    return res.status(400).json(err.message);
+  }
+});
 
 app.get("/data", async (req, res) => {
   try {

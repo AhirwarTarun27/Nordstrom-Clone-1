@@ -34,7 +34,7 @@ function Products() {
     
     var arr = new Array(4).fill(-1);
     const getData = ()=>{
-      fetch("http://localhost:4500/data").then(res=>res.json()).then(data=>{
+      fetch("https://nordstrom-backend.herokuapp.com/data").then(res=>res.json()).then(data=>{
         // setShuffleArray(data.res)
         // shuffle(data.res);
         setProductsData(data.res)
@@ -66,7 +66,7 @@ function Products() {
     }
     else
     {
-      fetch("http://localhost:4500/data").then(res=>res.json()).then(data=>{
+      fetch("https://nordstrom-backend.herokuapp.com/data").then(res=>res.json()).then(data=>{
         setProductsData(data.res)
         temp = productsData;
     });

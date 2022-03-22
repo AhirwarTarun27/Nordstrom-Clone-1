@@ -28,7 +28,7 @@ export const SignIn = () => {
 
   const handleLogin = () => {
     axios
-      .post("http://localhost:4500/users/login", user)
+      .post("https://nordstrom-backend.herokuapp.com/users/login", user)
       .then((res) => {
         console.log(res.data);
         dispatch(userData(res.data));
@@ -41,7 +41,7 @@ export const SignIn = () => {
 
   const handleCheck = () => {
     axios
-      .post("http://localhost:4500/users/check", user)
+      .post("https://nordstrom-backend.herokuapp.com/users/check", user)
       .then((res) => {
         if (res.data.message === "no") {
           navigate(`/signup`);
@@ -107,7 +107,7 @@ export const SignIn = () => {
             </p>
             <button onClick={handleCheck}>Next</button>
             <button>
-              <a href="http://localhost:4500/auth/google">
+              <a href="https://nordstrom-backend.herokuapp.com/auth/google">
                 <FcGoogle style={{ fontSize: "15px" }} />
               </a>
             </button>

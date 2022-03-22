@@ -16,7 +16,7 @@ function ProductDescription() {
   const id = useParams();
   // console.log(id)
   function getData() {
-    fetch(`http://localhost:4500/product/${id.id}`)
+    fetch(`https://nordstrom-backend.herokuapp.com/product/${id.id}`)
       .then((res) => res.json())
       .then((data) => {
         setProductData(data.res);

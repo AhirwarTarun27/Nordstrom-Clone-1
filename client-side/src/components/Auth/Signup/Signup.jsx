@@ -26,7 +26,7 @@ export const Signup = () => {
 
   const handleRegister = () => {
     axios
-      .post("http://localhost:4500/users/register", user)
+      .post("https://nordstrom-backend.herokuapp.com/users/register", user)
       .then((res) => {
         console.log(res.data);
         navigate(`/login`);
