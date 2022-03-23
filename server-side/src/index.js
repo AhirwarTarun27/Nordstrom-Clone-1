@@ -22,7 +22,7 @@ const routes = require("./routes/routes");
 app.use("/users", routes);
 
 const Product = require("./models/Products.model");
-const Cart = require("./models/Cart.model")
+const Cart = require("./models/Cart.model");
 app.use(express.json());
 // const userController = require("./controller/user.controller");
 // const Product = require("./model/products.model");
@@ -33,7 +33,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("", async (req, res) => {
   try {
-    
   } catch (err) {
     return res.status(400).json(err.message);
   }
@@ -59,10 +58,10 @@ app.post("/data", async (req, res) => {
   }
 });
 
-app.get("/product/:id", async(req, res) => {
+app.get("/product/:id", async (req, res) => {
   try {
     const item = await Product.find({ _id: req.params.id }).lean().exec();
-  return res.json({ res: item });
+    return res.json({ res: item });
   } catch (err) {
     return res.status(400).json(err.message);
   }
@@ -79,11 +78,10 @@ app.post("/cart", async (req, res) => {
   }
 });
 
-
-app.get("/cart/:id", async(req, res) => {
+app.get("/cart/:id", async (req, res) => {
   try {
     const item = await Cart.find({ userID: req.params.id }).lean().exec();
-  return res.json({ res: item });
+    return res.json({ res: item });
   } catch (err) {
     return res.status(400).json(err.message);
   }
